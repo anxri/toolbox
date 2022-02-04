@@ -45,7 +45,7 @@ bool toolbox::UdpSocket::udp_create()
  * @param port
  * @return
  */
-bool toolbox::UdpSocket::udp_send( string addr, string msg, string port ) const
+bool toolbox::UdpSocket::udp_send( string msg, string addr, string port ) const
 {
     const char *ch_addr     = addr.c_str();
     const char *ch_msg      = msg.c_str();

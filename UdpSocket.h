@@ -25,7 +25,7 @@ namespace toolbox
         public:
             bool udp_create();
 
-            bool udp_send( std::string addr, std::string msg, std::string port ) const;
+            bool udp_send( std::string msg, std::string addr, std::string port ) const;
 
             int udp_recv( std::string & ) const;
     };
