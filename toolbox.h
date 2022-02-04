@@ -13,8 +13,8 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef QUAGGA_TOOLBOX_H
-#define QUAGGA_TOOLBOX_H
+#ifndef TOOLBOX_H
+#define TOOLBOX_H
 
 #include <string>
 #include <vector>
@@ -95,9 +95,9 @@ namespace toolbox
         double diff_yr( const time_t &end, const time_t &start );
     }
 
-    namespace random
+    namespace rnd
     {
         std::string get_uuid();
     }
 }
-#endif //QUAGGA_TOOLBOX_H
+#endif

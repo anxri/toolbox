@@ -408,7 +408,7 @@ double toolbox::dt::diff_yr(const time_t &end, const time_t &start )
  *
  * @return
  */
-std::string toolbox::random::get_uuid()
+std::string toolbox::rnd::get_uuid()
 {
     static std::random_device dev;
     static std::mt19937 rng( dev());

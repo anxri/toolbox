@@ -20,7 +20,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 using std::stoi;
-using styl::string::const_char_ptr_to_char_ptr;
+using toolbox::str::const_char_ptr_to_char_ptr;
 
 /**
  *
