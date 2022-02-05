@@ -68,7 +68,7 @@ bool Socket::infile_valid() const
  * @param port
  * @return
  */
-bool Socket::bind( const string &port, const sockaddr_in & addr )
+bool Socket::bind( const string &port, int in_addr )
 {
     unsigned int i_port = stoi( port );
 
@@ -76,7 +76,7 @@ bool Socket::bind( const string &port, const sockaddr_in & addr )
         return false;
     
     m_addr.sin_family = AF_INET;
-    m_addr.sin_addr.s_addr = htonl(INADDR_ANY );
+    m_addr.sin_addr.s_addr = htonl(in_addr );
     m_addr.sin_port = htons( i_port );
     
     // Bind the socket with the server address

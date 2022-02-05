@@ -57,7 +57,7 @@ class Socket
 
         bool infile_valid() const;
 
-        bool bind( const std::string &port, const sockaddr_in & addr );
+        bool bind( const std::string &port, int in_addr=INADDR_ANY );
 
         int close() const;
 
