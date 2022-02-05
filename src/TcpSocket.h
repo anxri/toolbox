@@ -22,17 +22,22 @@ namespace toolbox
 {
     class TcpSocket : public Socket
     {
-        bool tcp_create();
+        public:
+            TcpSocket();
 
-        bool tcp_listen() const;
+            ~TcpSocket();
 
-        bool tcp_accept( Socket & new_socket );
+            bool tcp_create(); // todo move to constructor
 
-        bool tcp_connect( std::string host, std::string port );
+            bool tcp_listen() const;
 
-        bool tcp_send( std::string msg ) const;
+            bool tcp_accept(  );
 
-        bool tcp_recv( std::string & ) const;
+            bool tcp_connect( std::string host, std::string port );
+
+            bool tcp_send( std::string msg ) const;
+
+            bool tcp_recv( std::string & ) const;
     };
 }
 

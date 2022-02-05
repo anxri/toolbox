@@ -49,9 +49,9 @@ class Socket
 
         Socket( const Socket &obj );
 
-        virtual ~Socket();
+        ~Socket();
 
-        void set_socket( const int & sock );
+        void set_socket( int sock );
 
         int get_socket();
 
@@ -65,4 +65,4 @@ class Socket
 };
 
 
-#endif //SMARTHOME_SOCKET_H
+#endif

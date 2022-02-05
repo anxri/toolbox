@@ -38,6 +38,7 @@ std::string toolbox::Log::get_type_string( type t )
         case INFO:      return "INFO";
         case DEBUG:     return "DEBUG";
         case TRACE:     return "TRACE";
+        default:        return "INFO";
     }
 }
 

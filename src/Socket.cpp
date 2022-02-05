@@ -48,7 +48,7 @@ Socket::~Socket()
     close();
 }
 
-void Socket::set_socket( const int & sock )
+void Socket::set_socket( int sock )
 {
     m_sock = sock;
 }

@@ -20,6 +20,16 @@ using std::cerr;
 using std::endl;
 using std::string;
 
+toolbox::TcpSocket::TcpSocket() : Socket()
+{
+    tcp_create();
+}
+
+toolbox::TcpSocket::~TcpSocket()
+{
+
+}
+
 /**
  *
  * @return
@@ -67,12 +77,13 @@ bool toolbox::TcpSocket::tcp_listen() const
  * @param new_socket
  * @return
  */
-bool toolbox::TcpSocket::tcp_accept( Socket & new_socket )
+bool toolbox::TcpSocket::tcp_accept()
 {
     int addr_length = sizeof( m_addr );
-    new_socket.set_socket( ::accept( m_sock, ( struct sockaddr * ) NULL, NULL ));
 
-    if( new_socket.get_socket() <= 0 )
+    set_socket( ::accept( m_sock, ( struct sockaddr * ) NULL, NULL ));
+
+    if( m_sock <= 0 )
     {
         cerr << "tcp_accept :: " << strerror( errno ) << endl;
         return false;
@@ -98,7 +109,7 @@ bool toolbox::TcpSocket::tcp_connect( string host, string port )
     m_addr.sin_port = htons( i_port );
 
     // Convert IPv4 and IPv6 addresses from text to binary form
-    if( inet_pton( AF_INET, ch_host, &m_addr.sin_addr ) <= 0 )
+    if( inet_pton( AF_INET, ch_host, &m_addr.sin_addr ) < 0 )
     {
         cerr << "tcp_connect :: " << strerror( errno ) << endl;
         return false;
