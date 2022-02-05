@@ -15,9 +15,11 @@ file(
         "../src/*.cpp" ,
 )
 
-add_executable(toolbox_socket_client client.cpp ${HEADER_FILES} ${SOURCE_FILES} )
-add_executable(toolbox_socket_server server.cpp ${HEADER_FILES} ${SOURCE_FILES} )
+include_directories(../src)
 
-target_link_libraries(toolbox_socket_client stdc++fs)
-target_link_libraries(toolbox_socket_server stdc++fs)
+add_executable(socket_client client.cpp ${HEADER_FILES} ${SOURCE_FILES} )
+add_executable(socket_server server.cpp ${HEADER_FILES} ${SOURCE_FILES} )
+
+target_link_libraries(socket_client stdc++fs)
+target_link_libraries(socket_server stdc++fs)
 

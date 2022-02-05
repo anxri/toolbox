@@ -9,7 +9,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
-#include "../src/TcpSocket.h"
+#include "TcpSocket.h"
 
 using toolbox::TcpSocket;
 
